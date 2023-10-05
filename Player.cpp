@@ -8,6 +8,8 @@ void Player::Initalize() {
 	model_.reset(Model::Create());
 
 	worldTransform_.Initialize();
+
+	input = Input::GetInstance();
 }
 
 void Player::Update() { 
@@ -52,14 +54,19 @@ void Player::BehaviorRootInitalize() {
 
 void Player::BehaviorRootUpdate() { 
 	worldTransform_.translation_.y -= gravity; 
+	//スペースを押すとジャンプする
+	if ((Input::GetInstance()->PushKey(DIK_SPACE))) {
+		behaviorRequest_ = Behavior::kJump;
+	}
 }
 
-void Player::BehaviorJumpInitalize() {
-
+void Player::BehaviorJumpInitalize() { 
+	behavior_ = Behavior::kJump;
 }
 
-void Player::BehaviorJumpUpdate() {
+void Player::BehaviorJumpUpdate() { 
 
+	worldTransform_.translation_.y -= +gravity;
 }
 
 void Player::BehaviorDropInitalize() {

@@ -5,6 +5,7 @@
 #include "Model.h"
 #include "WorldTransform.h"
 #include "ViewProjection.h"
+#include "Input.h"
 
 enum class Behavior {
 	kRoot,//通常
@@ -33,7 +34,7 @@ private:
 	//kamataEngine
 	std::unique_ptr<Model> model_ = nullptr;
 	WorldTransform worldTransform_;
-
+	Input* input = nullptr;
 	//
 	Behavior behavior_ = Behavior::kRoot;
 	std::optional<Behavior> behaviorRequest_ = std::nullopt;
