@@ -28,7 +28,6 @@ void Player::Update() {
 		behaviorRequest_ = std::nullopt;
 	}
 
-
 	worldTransform_.UpdateMatrix();
 }
 
