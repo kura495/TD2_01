@@ -67,6 +67,12 @@
     <Filter Include="ヘッダー ファイル\Calc">
       <UniqueIdentifier>{e68f2b56-8ca8-4795-b8e8-5a7ce4464978}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameObject\Player">
+      <UniqueIdentifier>{04360ba1-0740-4ecf-8e38-e8cfe923805a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\Player">
+      <UniqueIdentifier>{e8fca66c-4aba-47df-aab5-586e53857fa5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -84,14 +90,14 @@
     <ClCompile Include="2d\ImGuiManager.cpp">
       <Filter>ソース ファイル\2d</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="WorldTransformEX.cpp">
       <Filter>ソース ファイル\Utility</Filter>
     </ClCompile>
     <ClCompile Include="Matrix.cpp">
       <Filter>ソース ファイル\Calc</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル\GameObject\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,11 +188,11 @@
     <ClInclude Include="base\StringUtility.h">
       <Filter>ヘッダー ファイル\base</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ヘッダー ファイル\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="Matirx.h">
       <Filter>ヘッダー ファイル\Calc</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ヘッダー ファイル\GameObject\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
