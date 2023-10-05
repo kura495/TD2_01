@@ -44,5 +44,5 @@ private:
 	float Jumpforce = 2.0f;
 
 	//Inputにpreviousがないのでフラグで管理
-	bool 
+	//bool 
 };
