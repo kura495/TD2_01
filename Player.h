@@ -39,10 +39,10 @@ private:
 	Behavior behavior_ = Behavior::kRoot;
 	std::optional<Behavior> behaviorRequest_ = std::nullopt;
 
-	float gravity = 0.98f;
-	float moveXaxisSpeed = 1.0f;
-	float Jumpforce = 2.0f;
+	float gravity = 0.098f;
+	float moveXaxisSpeed = 0.20f;
+	float Jumpforce = 1.0f;
 
 	//Inputにpreviousがないのでフラグで管理
-	//bool 
+	bool Jump = false;
 };
