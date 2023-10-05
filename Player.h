@@ -40,5 +40,9 @@ private:
 	std::optional<Behavior> behaviorRequest_ = std::nullopt;
 
 	float gravity = 0.98f;
+	float moveXaxisSpeed = 1.0f;
+	float Jumpforce = 2.0f;
 
+	//Inputにpreviousがないのでフラグで管理
+	bool 
 };

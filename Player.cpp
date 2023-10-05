@@ -54,19 +54,27 @@ void Player::BehaviorRootInitalize() {
 
 void Player::BehaviorRootUpdate() { 
 	worldTransform_.translation_.y -= gravity; 
+	worldTransform_.translation_.x += moveXaxisSpeed; 
+
 	//スペースを押すとジャンプする
 	if ((Input::GetInstance()->PushKey(DIK_SPACE))) {
 		behaviorRequest_ = Behavior::kJump;
+
 	}
 }
 
 void Player::BehaviorJumpInitalize() { 
 	behavior_ = Behavior::kJump;
+	Jumpforce = 2.0f;
 }
 
 void Player::BehaviorJumpUpdate() { 
-
-	worldTransform_.translation_.y -= +gravity;
+	
+	worldTransform_.translation_.y -= Jumpforce;
+	Jumpforce -= gravity; 
+	if (input->PushKey) {
+	
+	}
 }
 
 void Player::BehaviorDropInitalize() {
