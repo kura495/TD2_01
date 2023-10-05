@@ -9,8 +9,10 @@ void Player::Initalize() {
 	worldTransform_.Initialize();
 }
 
-void Player::Update() { worldTransform_. }
+void Player::Update() { 
+	worldTransform_.UpdateMatrix();
+}
 
-void Player::Draw() {
-
+void Player::Draw(ViewProjection ViewProjection_) { 
+	model_.get()->Draw(worldTransform_, ViewProjection_);
 }

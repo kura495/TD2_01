@@ -3,6 +3,7 @@
 #include "Model.h"
 
 #include "WorldTransform.h"
+#include "ViewProjection.h"
 
 class Player {
 public:
@@ -11,7 +12,7 @@ public:
 
 	void Initalize();
 	void Update();
-	void Draw();
+	void Draw(ViewProjection ViewProjection_);
 
 private:
 	std::unique_ptr<Model> model_ = nullptr;
