@@ -63,6 +63,8 @@ public: // メンバ関数
 	/// <returns>押されているか</returns>
 	bool PushKey(BYTE keyNumber) const;
 
+	bool PushPrekey(BYTE keyNumber) const;
+
 	/// <summary>
 	/// キーのトリガーをチェック
 	/// </summary>

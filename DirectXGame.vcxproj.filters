@@ -99,6 +99,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\GameObject\Player</Filter>
     </ClCompile>
+    <ClCompile Include="InputEX.cpp">
+      <Filter>ソース ファイル\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3d\ViewProjection.h">

@@ -109,6 +109,7 @@
     <ClCompile Include="2d\ImGuiManager.cpp" />
     <ClCompile Include="base\DirectXCommon.cpp" />
     <ClCompile Include="base\WinApp.cpp" />
+    <ClCompile Include="InputEX.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Player.cpp" />
