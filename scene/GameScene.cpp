@@ -11,9 +11,19 @@ void GameScene::Initialize() {
 	dxCommon_ = DirectXCommon::GetInstance();
 	input_ = Input::GetInstance();
 	audio_ = Audio::GetInstance();
+
+	viewProjection_.Initialize();
+
+	//GameObject
+	player_ = std::make_unique<Player>();
+	player_.get()->Initalize();
 }
 
-void GameScene::Update() {}
+void GameScene::Update() { 
+	viewProjection_.UpdateMatrix();
+
+	player_.get()->Update();
+}
 
 void GameScene::Draw() {
 
@@ -41,6 +51,8 @@ void GameScene::Draw() {
 	/// <summary>
 	/// ここに3Dオブジェクトの描画処理を追加できる
 	/// </summary>
+
+	player_.get()->Draw(viewProjection_);
 
 	// 3Dオブジェクト描画後処理
 	Model::PostDraw();

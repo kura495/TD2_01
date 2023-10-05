@@ -1,8 +1,8 @@
-#include "WorldTransform.h"
+ï»¿#include "WorldTransform.h"
 #include "Matirx.h"
 void WorldTransform::UpdateMatrix() {
 	matWorld_ = MakeAffineMatrix(scale_, rotation_, translation_);
-	// e‚ª‚ ‚ê‚Îe‚Ìƒ[ƒ‹ƒhs—ñ‚ðŠ|‚¯‚é
+	// è¦ªãŒã‚ã‚Œã°è¦ªã®ãƒ¯ãƒ¼ãƒ«ãƒ‰è¡Œåˆ—ã‚’æŽ›ã‘ã‚‹
 	if (parent_) {
 		matWorld_ = Multiply(matWorld_, parent_->matWorld_);
 	}

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "Model.h"
 
@@ -12,7 +12,7 @@ public:
 
 	void Initalize();
 	void Update();
-	void Draw(ViewProjection ViewProjection_);
+	void Draw(const ViewProjection& ViewProjection_);
 
 private:
 	std::unique_ptr<Model> model_ = nullptr;

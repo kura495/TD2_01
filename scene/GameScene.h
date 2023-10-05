@@ -50,7 +50,11 @@ private: // メンバ変数
 	/// <summary>
 	/// ゲームシーン用
 	/// </summary>
-	std::unique_ptr<Player> player_
+
+	ViewProjection viewProjection_;
+
+	//GameObject
+	std::unique_ptr<Player> player_ = nullptr;
 
 
 };
