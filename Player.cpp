@@ -54,7 +54,7 @@ void Player::BehaviorRootInitalize() {
 
 void Player::BehaviorRootUpdate() { 
 	worldTransform_.translation_.y -= gravity; 
-	worldTransform_.translation_.x += moveXaxisSpeed; 
+	worldTransform_.translation_.x += moveXaxisSpeed;
 
 	//スペースを押すとジャンプする
 	if (input->PushKey(DIK_SPACE) != 0 && input->PushPrekey(DIK_SPACE) == 0) {
@@ -84,6 +84,11 @@ void Player::BehaviorDropInitalize() {
 }
 
 void Player::BehaviorDropUpdate() {
+
+}
+
+void Player::Attack(){
+
 
 }
 

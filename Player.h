@@ -31,6 +31,7 @@ private:
 	void BehaviorDropInitalize();
 	void BehaviorDropUpdate();
 
+	void Attack();
 	//kamataEngine
 	std::unique_ptr<Model> model_ = nullptr;
 	WorldTransform worldTransform_;

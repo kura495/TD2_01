@@ -73,6 +73,12 @@
     <Filter Include="ヘッダー ファイル\GameObject\Player">
       <UniqueIdentifier>{e8fca66c-4aba-47df-aab5-586e53857fa5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameObject\Laser">
+      <UniqueIdentifier>{d8cbe76e-e0f5-48df-afc5-b9d810b9bbc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameObject\Leser">
+      <UniqueIdentifier>{ba3a5495-435c-4751-81c1-5a39f072d590}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
