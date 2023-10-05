@@ -17,17 +17,28 @@ void Player::Update() {
 		switch (behavior_) {
 		case Behavior::kRoot:
 		default:
-			BehaviorRootUpdate();
+			BehaviorRootInitalize();
 		case Behavior::kJump:
-			BehaviorJumpUpdate();
+			BehaviorJumpInitalize();
 		break;
 		case Behavior::kDrop:
-			BehaviorDropUpdate();
+			BehaviorDropInitalize();
 		break;
 		}
 		behaviorRequest_ = std::nullopt;
 	}
 
+	switch (behavior_) {
+	case Behavior::kRoot:
+	default:
+		BehaviorRootUpdate();
+	case Behavior::kJump:
+		BehaviorJumpUpdate();
+		break;
+	case Behavior::kDrop:
+		BehaviorDropUpdate();
+		break;
+	}
 	worldTransform_.UpdateMatrix();
 }
 
@@ -35,11 +46,23 @@ void Player::Draw(const ViewProjection& ViewProjection_) {
 	model_.get()->Draw(worldTransform_, ViewProjection_);
 }
 
-void Player::BehaviorRootUpdate() {
+void Player::BehaviorRootInitalize() {
+
+}
+
+void Player::BehaviorRootUpdate() { 
+	worldTransform_.translation_.y -= gravity; 
+}
+
+void Player::BehaviorJumpInitalize() {
 
 }
 
 void Player::BehaviorJumpUpdate() {
+
+}
+
+void Player::BehaviorDropInitalize() {
 
 }
 

@@ -23,8 +23,11 @@ public:
 
 private:
 
+	void BehaviorRootInitalize();
 	void BehaviorRootUpdate();
+	void BehaviorJumpInitalize();
 	void BehaviorJumpUpdate();
+	void BehaviorDropInitalize();
 	void BehaviorDropUpdate();
 
 	//kamataEngine
@@ -34,5 +37,7 @@ private:
 	//
 	Behavior behavior_ = Behavior::kRoot;
 	std::optional<Behavior> behaviorRequest_ = std::nullopt;
+
+	float gravity = 0.98f;
 
 };
