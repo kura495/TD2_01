@@ -6,7 +6,8 @@ Player::~Player() {}
 void Player::Initalize() { 
 	model_ = std::make_unique<Model>();
 	model_.reset(Model::Create());
-
+	leser_model = new Model();
+	leser_model->Create();
 	worldTransform_.Initialize();
 
 	input = Input::GetInstance();
@@ -41,11 +42,19 @@ void Player::Update() {
 		BehaviorDropUpdate();
 		break;
 	}
+
+	for (Leser* leser : lesers_) {
+		leser->Update();
+	}
+
 	worldTransform_.UpdateMatrix();
 }
 
 void Player::Draw(const ViewProjection& ViewProjection_) { 
 	model_.get()->Draw(worldTransform_, ViewProjection_);
+	for (Leser* leser : lesers_) {
+		leser->Draw(ViewProjection_);
+	}
 }
 
 void Player::BehaviorRootInitalize() {
@@ -66,6 +75,9 @@ void Player::BehaviorJumpInitalize() {
 	behavior_ = Behavior::kJump;
 	Jumpforce = 1.0f;
 	moveXaxisSpeed *= -1;
+	leser_ = new Leser();
+	leser_->Initalize(leser_model,worldTransform_);
+	lesers_.push_back(leser_);
 }
 
 void Player::BehaviorJumpUpdate() { 

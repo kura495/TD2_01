@@ -6,6 +6,8 @@
 #include "WorldTransform.h"
 #include "ViewProjection.h"
 #include "Input.h"
+//
+#include "Leser.h"
 
 enum class Behavior {
 	kRoot,//通常
@@ -44,6 +46,8 @@ private:
 	float moveXaxisSpeed = 0.60f;
 	float Jumpforce = 1.0f;
 
-	//Inputにpreviousがないのでフラグで管理
-	bool Jump = false;
+	std::list<Leser*> lesers_;
+	Leser* leser_;
+	Model* leser_model;
+	
 };
