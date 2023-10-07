@@ -108,6 +108,9 @@
     <ClCompile Include="InputEX.cpp">
       <Filter>ソース ファイル\input</Filter>
     </ClCompile>
+    <ClCompile Include="Laser.cpp">
+      <Filter>ソース ファイル\GameObject\Laser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3d\ViewProjection.h">
@@ -202,6 +205,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>ヘッダー ファイル\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Leser.h">
+      <Filter>ヘッダー ファイル\GameObject\Leser</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
