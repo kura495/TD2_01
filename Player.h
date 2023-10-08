@@ -47,7 +47,7 @@ private:
 	float Jumpforce = 1.0f;
 
 	std::list<Leser*> lesers_;
-	Leser* leser_;
+
 	Model* leser_model;
 	
 };

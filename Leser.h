@@ -15,6 +15,11 @@ public:
 	void Draw(const ViewProjection& ViewProjection_);
 
 private:
-	std::unique_ptr<Model> model_;
+
+	//kamataEngine
+	Model* model_;
 	WorldTransform worldTransform_;
+
+	//
+	int AliveCount = 240;
 };

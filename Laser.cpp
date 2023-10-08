@@ -4,8 +4,7 @@ Leser::Leser() {}
 Leser::~Leser() {}
 
 void Leser::Initalize(Model* model,const WorldTransform& PlayerworldTransform_) { 
-	model_ = std::make_unique<Model>();
-	model_.reset(model);
+	model_ = model;
 	worldTransform_.scale_.x = 0.5f;
 	worldTransform_.scale_.y = 1.5f;
 	worldTransform_.scale_.z = 0.5f;
@@ -14,11 +13,13 @@ void Leser::Initalize(Model* model,const WorldTransform& PlayerworldTransform_) 
 }
 
 void Leser::Update() { 
-	//worldTransform_.translation_.y -= 0.5f;
+	worldTransform_.translation_.y -= 2.0f;
 	worldTransform_.UpdateMatrix();
+
+
 }
 
 void Leser::Draw(const ViewProjection& ViewProjection_) { 
-	model_.get()->Draw(worldTransform_,ViewProjection_);
+	model_->Draw(worldTransform_,ViewProjection_);
 }
 
