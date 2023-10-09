@@ -23,6 +23,7 @@ public:
 	void Initalize();
 	void Update();
 	void Draw(const ViewProjection& ViewProjection_);
+	void OnCollition();
 
 private:
 
@@ -47,7 +48,11 @@ private:
 	float Jumpforce = 1.0f;
 
 	std::list<Leser*> lesers_;
-
 	Model* leser_model;
-	
+
+	int DropCount = 0;
+	const int kDropAnime = 20;
+	bool DropFlag = false;
+	//TODO ちゃんといじろう
+	int HP = 10;
 };

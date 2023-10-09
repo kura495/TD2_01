@@ -13,6 +13,8 @@ public:
 	void Initalize(Model* model, const WorldTransform& PlayerworldTransform_);
 	void Update();
 	void Draw(const ViewProjection& ViewProjection_);
+	void OnCollition();
+	bool GetIsAlive() { return IsAlive; }
 
 private:
 
@@ -22,4 +24,5 @@ private:
 
 	//
 	int AliveCount = 240;
+	bool IsAlive = true;
 };

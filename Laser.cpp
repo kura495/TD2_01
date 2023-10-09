@@ -15,11 +15,19 @@ void Leser::Initalize(Model* model,const WorldTransform& PlayerworldTransform_) 
 void Leser::Update() { 
 	worldTransform_.translation_.y -= 2.0f;
 	worldTransform_.UpdateMatrix();
-
+	AliveCount--;
+	if (AliveCount <= 0) {
+		IsAlive = false;
+	}
 
 }
 
 void Leser::Draw(const ViewProjection& ViewProjection_) { 
 	model_->Draw(worldTransform_,ViewProjection_);
+}
+
+void Leser::OnCollition() { 
+	IsAlive = false;
+
 }
 

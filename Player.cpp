@@ -58,14 +58,30 @@ void Player::Draw(const ViewProjection& ViewProjection_) {
 	}
 }
 
-void Player::BehaviorRootInitalize() {
+void Player::OnCollition() { 
+	if (DropFlag) {
+		return;
+	} else {
+		HP -= 1;
+	}
 
+}
+
+void Player::BehaviorRootInitalize() { 
+	behavior_ = Behavior::kRoot;
+	DropFlag = false;
 }
 
 void Player::BehaviorRootUpdate() { 
 	worldTransform_.translation_.y -= gravity; 
 	worldTransform_.translation_.x += moveXaxisSpeed;
-
+	lesers_.remove_if([](Leser* leser) {
+		if (leser->GetIsAlive()) {
+			delete leser;
+			return true;
+		}
+		return false;
+	});
 	//スペースを押すとジャンプする
 	if (input->PushKey(DIK_SPACE) != 0 && input->PushPrekey(DIK_SPACE) == 0) {
 		behaviorRequest_ = Behavior::kJump;
@@ -79,30 +95,46 @@ void Player::BehaviorJumpInitalize() {
 	Leser* leser_ = new Leser();
 	leser_->Initalize(leser_model, worldTransform_);
 	lesers_.push_back(leser_);
+	DropCount = 0;
+	DropFlag = false;
 }
 
 void Player::BehaviorJumpUpdate() { 
 	
 	worldTransform_.translation_.y += Jumpforce;
 	worldTransform_.translation_.x += moveXaxisSpeed; 
-
+	
 	Jumpforce -= gravity;
+	DropCount++;
 	if (input->PushKey(DIK_SPACE) != 0 && input->PushPrekey(DIK_SPACE) == 0) {
 		behaviorRequest_ = Behavior::kJump;
+	} 
+	else if (
+	    DropCount == kDropAnime && input->PushKey(DIK_SPACE) != 0 &&
+	    input->PushPrekey(DIK_SPACE) != 0) {
+		behaviorRequest_ = Behavior::kDrop;
 	}
 }
 
-void Player::BehaviorDropInitalize() {
+void Player::BehaviorDropInitalize() { 
+	behavior_ = Behavior::kDrop;
 
 }
 
-void Player::BehaviorDropUpdate() {
-
+void Player::BehaviorDropUpdate() { 
+	worldTransform_.translation_.y += 0.06f;
+	DropCount++;
+	if (DropCount >= kDropAnime * 3 ) {
+		Attack();
+	}
+	if (input->PushKey(DIK_SPACE) == 0) {
+		behaviorRequest_ = Behavior::kRoot;
+	}
 }
 
-void Player::Attack(){
-
-
+void Player::Attack(){ 
+	worldTransform_.translation_.y -= 1.0f;
+	DropFlag = true;
 }
 
 
