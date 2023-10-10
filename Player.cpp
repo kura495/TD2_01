@@ -122,7 +122,7 @@ void Player::BehaviorDropInitalize() {
 }
 
 void Player::BehaviorDropUpdate() { 
-	worldTransform_.translation_.y += 0.06f;
+	worldTransform_.translation_.y += 0.03f;
 	DropCount++;
 	if (DropCount >= kDropAnime * 3 ) {
 		Attack();
@@ -133,7 +133,7 @@ void Player::BehaviorDropUpdate() {
 }
 
 void Player::Attack(){ 
-	worldTransform_.translation_.y -= 1.0f;
+	worldTransform_.translation_.y -= 2.0f;
 	DropFlag = true;
 }
 
