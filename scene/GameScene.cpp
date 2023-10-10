@@ -16,7 +16,7 @@ void GameScene::Initialize() {
 
 	//GameObject
 	player_ = std::make_unique<Player>();
-	player_.get()->Initalize();
+	player_.get()->Initalize({0,0,0});
 }
 
 void GameScene::Update() { 

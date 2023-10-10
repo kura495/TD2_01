@@ -13,7 +13,7 @@ void Leser::Initalize(Model* model,const WorldTransform& PlayerworldTransform_) 
 }
 
 void Leser::Update() { 
-	worldTransform_.translation_.y -= 2.0f;
+	worldTransform_.translation_.y -= 4.0f;
 	worldTransform_.UpdateMatrix();
 	AliveCount--;
 	if (AliveCount <= 0) {

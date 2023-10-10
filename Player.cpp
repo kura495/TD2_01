@@ -3,12 +3,12 @@
 Player::Player() {}
 Player::~Player() {}
 
-void Player::Initalize() { 
+void Player::Initalize(const Vector3& position) { 
 	leser_model = new Model();
  	leser_model = Model::Create();
 	model_ = std::make_unique<Model>();
 	model_.reset(Model::Create());
- 	
+	worldTransform_.translation_ = position;
 	worldTransform_.Initialize();
 
 	input = Input::GetInstance();

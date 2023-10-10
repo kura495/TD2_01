@@ -20,7 +20,7 @@ public:
 	Player();
 	~Player();
 
-	void Initalize();
+	void Initalize(const Vector3& position);
 	void Update();
 	void Draw(const ViewProjection& ViewProjection_);
 	void OnCollision();
