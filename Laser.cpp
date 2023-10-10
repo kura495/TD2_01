@@ -26,7 +26,7 @@ void Leser::Draw(const ViewProjection& ViewProjection_) {
 	model_->Draw(worldTransform_,ViewProjection_);
 }
 
-void Leser::OnCollition() { 
+void Leser::OnCollision() { 
 	IsAlive = false;
 
 }

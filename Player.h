@@ -23,7 +23,7 @@ public:
 	void Initalize();
 	void Update();
 	void Draw(const ViewProjection& ViewProjection_);
-	void OnCollition();
+	void OnCollision();
 
 private:
 

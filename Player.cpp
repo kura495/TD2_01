@@ -58,7 +58,7 @@ void Player::Draw(const ViewProjection& ViewProjection_) {
 	}
 }
 
-void Player::OnCollition() { 
+void Player::OnCollision() { 
 	if (DropFlag) {
 		return;
 	} else {

@@ -13,7 +13,7 @@ public:
 	void Initalize(Model* model, const WorldTransform& PlayerworldTransform_);
 	void Update();
 	void Draw(const ViewProjection& ViewProjection_);
-	void OnCollition();
+	void OnCollision();
 	bool GetIsAlive() { return IsAlive; }
 
 private:
