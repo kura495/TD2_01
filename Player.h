@@ -24,6 +24,8 @@ public:
 	void Update();
 	void Draw(const ViewProjection& ViewProjection_);
 	void OnCollision();
+	const Vector3 GetPosition()
+	{ return worldTransform_.translation_; }
 
 private:
 
