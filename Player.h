@@ -46,7 +46,8 @@ private:
 	std::optional<Behavior> behaviorRequest_ = std::nullopt;
 
 	float gravity = 0.3f;
-	float moveXaxisSpeed = 0.60f;
+	const float kXaxisSpeed = 0.60f;
+	float moveXaxisSpeed = kXaxisSpeed;
 	float Jumpforce = 3.0f;
 
 	std::list<Leser*> lesers_;

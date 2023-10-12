@@ -22,6 +22,7 @@ void Player::Update() {
 		case Behavior::kRoot:
 		default:
 			BehaviorRootInitalize();
+			break;
 		case Behavior::kJump:
 			BehaviorJumpInitalize();
 		break;
@@ -36,6 +37,7 @@ void Player::Update() {
 	case Behavior::kRoot:
 	default:
 		BehaviorRootUpdate();
+		break;
 	case Behavior::kJump:
 		BehaviorJumpUpdate();
 		break;
@@ -106,7 +108,7 @@ void Player::BehaviorJumpUpdate() {
 	if (Jumpforce > 0) {
 		Jumpforce -= gravity;
 	} else if(Jumpforce <= 0) {
-		Jumpforce = -gravity;
+		Jumpforce = -kXaxisSpeed;
 	}
 	
 	DropCount++;
