@@ -45,9 +45,9 @@ private:
 	Behavior behavior_ = Behavior::kRoot;
 	std::optional<Behavior> behaviorRequest_ = std::nullopt;
 
-	float gravity = 0.098f;
+	float gravity = 0.3f;
 	float moveXaxisSpeed = 0.60f;
-	float Jumpforce = 1.0f;
+	float Jumpforce = 3.0f;
 
 	std::list<Leser*> lesers_;
 	Model* leser_model;

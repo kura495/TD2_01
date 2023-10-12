@@ -90,7 +90,7 @@ void Player::BehaviorRootUpdate() {
 
 void Player::BehaviorJumpInitalize() { 
 	behavior_ = Behavior::kJump;
-	Jumpforce = 1.0f;
+	Jumpforce = 2.0f;
 	moveXaxisSpeed *= -1;
 	Leser* leser_ = new Leser();
 	leser_->Initalize(leser_model, worldTransform_);
@@ -103,8 +103,12 @@ void Player::BehaviorJumpUpdate() {
 	
 	worldTransform_.translation_.y += Jumpforce;
 	worldTransform_.translation_.x += moveXaxisSpeed; 
+	if (Jumpforce > 0) {
+		Jumpforce -= gravity;
+	} else if(Jumpforce <= 0) {
+		Jumpforce = -gravity;
+	}
 	
-	Jumpforce -= gravity;
 	DropCount++;
 	if (input->PushKey(DIK_SPACE) != 0 && input->PushPrekey(DIK_SPACE) == 0) {
 		behaviorRequest_ = Behavior::kJump;
