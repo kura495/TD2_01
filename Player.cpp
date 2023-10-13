@@ -124,7 +124,6 @@ void Player::BehaviorJumpUpdate() {
 
 void Player::BehaviorDropInitalize() { 
 	behavior_ = Behavior::kDrop;
-
 }
 
 void Player::BehaviorDropUpdate() { 
@@ -138,9 +137,26 @@ void Player::BehaviorDropUpdate() {
 	}
 }
 
+void Player::BehaviorHitInitalize() { 
+	behavior_ = Behavior::kHit;
+	t = 0.0f;
+}
+
+void Player::BehaviorHitUpdate() { 
+	t += 0.1f;
+	worldTransform_.translation_.y = Lerp();
+	if (t <= 1.0f) {
+		behaviorRequest_ = Behavior::kRoot;
+	}
+}
+
 void Player::Attack(){ 
 	worldTransform_.translation_.y -= 2.0f;
 	DropFlag = true;
+}
+
+float Player::Lerp(float a, float b, float t) { return a + t * (b - a);
+
 }
 
 
